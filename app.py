@@ -12,7 +12,7 @@ user_input = st.text_input("You:", key="input")
 
 if user_input:
     # NEW (Render backend)
-    response = requests.post("https://tailortalk-backend-wkym.onrender.com/chat", json={"message": user_input})
+    response = requests.post("https://tailortalk-backend-wkym.onrender.com/", json={"message": user_input})
 
     bot_reply = response.json()["response"]
     st.session_state.chat_history.append(("You", user_input))
